@@ -64,6 +64,6 @@ Optionaler Teil:
 
 - Für das Backend wird [Go](https://go.dev/) mit dem [Gin Framework](https://gin-gonic.com/) verwendet
   - **Begründung für diese Wahl**:
-  - **Go wird kompiliert** --> Dies macht es schneller als interpretierte Sprachen wie Python oder JavaScript
-  - **Support für WebSockets** --> Dies eignet sich besonders für real time Applications in unserem Fall Aktienpreise
-  - **Einfaches JSON Handling** --> [Gin](https://gin-gonic.com/) stellt JSON Handling out of the Box bereits zur Verfügung
+    - **Go wird kompiliert** --> Dies macht es schneller als interpretierte Sprachen wie Python oder JavaScript.
+    - **Support für WebSockets** --> Dies eignet sich besonders für real time Applications in unserem Fall Aktienpreise
+    - **Einfaches JSON Handling** --> [Gin](https://gin-gonic.com/) stellt JSON Handling out of the Box bereits zur Verfügung
