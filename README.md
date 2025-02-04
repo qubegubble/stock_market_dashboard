@@ -12,7 +12,7 @@ Optionaler Teil:
 
 # Anforderungen
 - **User Story 1**: Registrieren / Anmelden auf der Webseite (Prio 'Must')
-- - **Akzeptanzkriterien**:
+  - **Akzeptanzkriterien**:
   - Mittels korrekten User Informationen: Name, Vorname, E-Mail (muss korrektes Format haben) und validem Passwort (genug lang + Sonderzeichen) sich registrieren könenn.
   - Die gleiche E-Mail kann nicht zwei mal registriert werden.
   - Nach dem registrieren kann man sich direkt via Login anmelden.
