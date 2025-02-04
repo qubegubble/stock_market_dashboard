@@ -1,5 +1,6 @@
-# stock_market_dashboard
-WEBLAB Project HS24
+# Stock Market Dashboard WEBLAB HS24 Projekt
+# Kontext
+
 ## Must Haves
 - *User Authentication*: Users should be able to register, log in and manage their profile.
 - *Real-Time Stock Data fetching*: The backend should fetch stock data from an API (Alpha Vantage, Yahoo Finance) using Go Routines
