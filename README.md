@@ -13,15 +13,28 @@ Optionaler Teil:
 # Anforderungen
 - **User Story 1**: Registrieren / Anmelden auf der Webseite (Prio 'Must').
 - **Akzeptanzkriterien**:
-  - Mittels korrekten User Informationen: Name, Vorname, E-Mail (muss korrektes Format haben) und validem Passwort (genug lang + Sonderzeichen) sich registrieren könenn.
+  - Mittels korrekten User Informationen: Name(Muss Eingabe), Vorname(Muss Eingabe), E-Mail(Muss Eingabe + muss korrektes Format haben) und validem Passwort (genug lang + Sonderzeichen) sich registrieren könenn.
     - Es sollte eine Validierung client seitig wie auch server seitig passieren.
   - Die gleiche E-Mail kann nicht zwei mal registriert werden.
   - Nach dem registrieren kann man sich direkt via Login anmelden.
 
-- **User Story 2**: Das Dashboard gibt live updates für Aktien (Prio 'Must).
+- **User Story 2**: Das Dashboard zeigt Aktien als Graphen an(Prio 'Could').
 - **Akzeptanzkriterien**:
-  - Die Top Aktien werden als Dashboard dargestellt.
-  - Man kann Aktien ins Dashboard hinzufügen.
+  - Aktien werden als Graphen dargestellt.
 
-- **User Sotry 3**: 
+- **User Story 3**: Das Dashboard kann beliebig modifiziert werden (Prio 'Must').
+- **Akzeptanzkriterien**:
+  - Es können via Suche weitere Aktien ins Dashboard hinzugefügt werden.
+  - Aktien die man nicht will können entfernt werden vom Dashboard.
+
+- **User Story 4**: Live Updates auf den Akiten (Prio 'Should).
+- **Akzeptanzkriterien**:
+  - Die Aktien sollen live Updates ihres Preises ohne neu laden der Seite anzeigen.
+
+- **User Story 5**: User Preference (Prio 'Should')
+- **Akzeptanzkriterien**:
+  - Mittels favorite button (stern z.B) können User aktien favorisieren.
+  - Favorisierte Aktien werden immer zuerst geladen und sind auch zuoberst.
+
+    
 
