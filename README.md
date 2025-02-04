@@ -5,6 +5,7 @@ Das Stock Market Dashboard stellt verschiedenste Aktien mit live updates zur Ver
 Als Software-Anbieter möchte ich das Stock Market Dashboard als SaaS anbieten. Das Dasboard besteht aus folgenden elementaren Teilen:
 - User können sich registrieren und anmelden.
 - Top Aktien werden als Dashboard angezeigt mit live updates
+- Man kann nach Aktien suchen.
 
 Optionaler Teil:
 - User können ihr Dashboard modifizieren so wie sie es wollen.
