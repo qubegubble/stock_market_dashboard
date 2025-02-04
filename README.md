@@ -13,23 +13,30 @@ Optionaler Teil:
 # Anforderungen
 - **User Story 1**: Registrieren / Anmelden auf der Webseite (Prio 'Must').
 - **Akzeptanzkriterien**:
-  - Mittels korrekten User Informationen: Name(Muss Eingabe), Vorname(Muss Eingabe), E-Mail(Muss Eingabe + muss korrektes Format haben) und validem Passwort (genug lang + Sonderzeichen) sich registrieren könenn.
-    - Es sollte eine Validierung client seitig wie auch server seitig passieren.
+  - Anforderung für eine Registrierung:
+    - Name, Vorname
+    - E-Mail, von welcher das Format validiert werden muss
+    - Passwort, Dieses **muss** gewisse Sicherheitsstandards erreichen. Genug lang (mind. 8 Zeichen), Enthält mindestens eine Nummer + ein Sonderzeichen
+    - Bei der Registrierung muss der User Input Client-Seitig wie auch Server-Seitig validiert werden.
   - Die gleiche E-Mail kann nicht zwei mal registriert werden.
   - Nach dem registrieren kann man sich direkt via Login anmelden.
 
 - **User Story 2**: Das Dashboard zeigt Aktien als Graphen an(Prio 'Could').
 - **Akzeptanzkriterien**:
   - Aktien werden als Graphen dargestellt.
+  - Die Graphen zeigen die Preistrends über eine gewisse Zeit (1 Tag, 1 Woche, etc.)
 
 - **User Story 3**: Es können Aktien zum Dashboard hinzugefügt oder entfernt werden (Prio 'Must').
 - **Akzeptanzkriterien**:
-  - Es können via Suche weitere Aktien ins Dashboard hinzugefügt werden.
+  - Via Suche kann man weitere Aktien finden und zu seinem Dashboard hinzufügen.
+    - Die Aktien sollten über einen Button (z.B 'Add to Dashboard') hinzugefügt werden können.
   - Aktien die man nicht will können entfernt werden vom Dashboard.
 
 - **User Story 4**: Web Sockets for live updates (Prio 'Should).
 - **Akzeptanzkriterien**:
-  - Die Aktien sollen live Updates ihres Preises ohne neu laden der Seite anzeigen.
+  - Es sollten Web-Sockets genutzt werden für real-time preis updates.
+  - Preise werden aktualisiert ohne das die Seite aktualisiert werden muss.
+  - Die Updates passieren in einem vordefinierten Zeitintervall (10Sekunden z.B)
 
 - **User Story 5**: User Preference (Prio 'Should')
 - **Akzeptanzkriterien**:
@@ -44,7 +51,7 @@ Optionaler Teil:
 
 - **User Story 7**: User Portfolio und historische Stock Market Daten abspeichern können (Prio 'Should')
 - **Akzeptanzkriterien**:
-  - Historisierte Daten der Aktien werden in einer DB abgelegt.
+  - User Portfolio (Liste der favorisierten Aktien z.B) wird in einer DB persistiert.
   - Aktuelle Daten werden gecached für schnellen Zugriff.
     
 
