@@ -11,12 +11,17 @@ Optionaler Teil:
 - User können ihr Dashboard modifizieren so wie sie es wollen.
 
 # Anforderungen
-- **User Story 1**: Registrieren / Anmelden auf der Webseite (Prio 'Must')
+- **User Story 1**: Registrieren / Anmelden auf der Webseite (Prio 'Must').
 - **Akzeptanzkriterien**:
   - Mittels korrekten User Informationen: Name, Vorname, E-Mail (muss korrektes Format haben) und validem Passwort (genug lang + Sonderzeichen) sich registrieren könenn.
-    - Es sollte eine validierung client seitig wie auch server seitig passieren.
+    - Es sollte eine Validierung client seitig wie auch server seitig passieren.
   - Die gleiche E-Mail kann nicht zwei mal registriert werden.
   - Nach dem registrieren kann man sich direkt via Login anmelden.
 
-- **User Story 2**: Das Dashboard gibt live updates für Aktien via
+- **User Story 2**: Das Dashboard gibt live updates für Aktien (Prio 'Must).
+- **Akzeptanzkriterien**:
+  - Die Top Aktien werden als Dashboard dargestellt.
+  - Man kann Aktien ins Dashboard hinzufügen.
+
+- **User Sotry 3**: 
 
