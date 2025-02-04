@@ -27,15 +27,24 @@ Optionaler Teil:
   - Es können via Suche weitere Aktien ins Dashboard hinzugefügt werden.
   - Aktien die man nicht will können entfernt werden vom Dashboard.
 
-- **User Story 4**: Live Updates auf den Akiten (Prio 'Should).
+- **User Story 4**: Web Sockets for live updates (Prio 'Should).
 - **Akzeptanzkriterien**:
   - Die Aktien sollen live Updates ihres Preises ohne neu laden der Seite anzeigen.
 
 - **User Story 5**: User Preference (Prio 'Should')
 - **Akzeptanzkriterien**:
-  - Mittels favorite button (stern z.B) können User aktien favorisieren.
+  - Mittels favorite button (stern z.B) können User Aktien favorisieren.
+    - Z.B ein Sterm Symbol bei jeder Aktie und bei klicken auf dieses Symbol wird diese entweder favorisiert oder von den favoriten weggenommen falls bereits favorisiert.
   - Favorisierte Aktien werden immer zuerst geladen und sind auch zuoberst.
 
-- **User Story 6**:
+- **User Story 6**: Das Dashboard kann belibieg angepasst werden vom User (Prio 'Could).
+- **Akzeptanzkriterien**:
+  - Die Aktien können beliebig angeordnet werden nach Benutzer präferenzen.
+    - Z.B kann per Drag&Drop oder Nummerierung die Reihenfolgen der dargestellten Aktien angepasst werden.
+
+- **User Story 7**: User Portfolio und historische Stock Market Daten abspeichern können (Prio 'Should')
+- **Akzeptanzkriterien**:
+  - Historisierte Daten der Aktien werden in einer DB abgelegt.
+  - Aktuelle Daten werden gecached für schnellen Zugriff.
     
 
