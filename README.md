@@ -22,7 +22,7 @@ Optionaler Teil:
 - **Akzeptanzkriterien**:
   - Aktien werden als Graphen dargestellt.
 
-- **User Story 3**: Das Dashboard kann beliebig modifiziert werden (Prio 'Must').
+- **User Story 3**: Es können Aktien zum Dashboard hinzugefügt oder entfernt werden (Prio 'Must').
 - **Akzeptanzkriterien**:
   - Es können via Suche weitere Aktien ins Dashboard hinzugefügt werden.
   - Aktien die man nicht will können entfernt werden vom Dashboard.
@@ -36,5 +36,6 @@ Optionaler Teil:
   - Mittels favorite button (stern z.B) können User aktien favorisieren.
   - Favorisierte Aktien werden immer zuerst geladen und sind auch zuoberst.
 
+- **User Story 6**:
     
 
