@@ -54,4 +54,16 @@ Optionaler Teil:
   - User Portfolio (Liste der favorisierten Aktien z.B) wird in einer DB persistiert.
   - Aktuelle Daten werden gecached für schnellen Zugriff.
     
+# Technologiestack (vorübergehender Vorschlag)
+## Frontend
+- Für das Frontend wird [Angular(Version 19)](https://angular.dev/) + [D3js](https://d3js.org/) verwendet
+  - **Begründung für diese Wahl**:
+    - [Angular](https://angular.dev/) daher dieses sich gut für SPA eignet und es sowohl im Unterricht vorgestellt wird
+    - [D3js](https://d3js.org/) daher sich dieses für die darstellung von Graphen und Dahsboards sehr gut eignet.
+    - Für das Styling wird [Angular Material](https://material.angular.io/) verwendet daher man dort bereits vorgebaute Komponenten hat.
 
+- Für das Backend wird [Go](https://go.dev/) mit dem [Gin Framework](https://gin-gonic.com/) verwendet
+  - **Begründung für diese Wahl**:
+  - **Go wird kompiliert** --> Dies macht es schneller als interpretierte Sprachen wie Python oder JavaScript
+  - **Support für WebSockets** --> Dies eignet sich besonders für real time Applications in unserem Fall Aktienpreise
+  - **Einfaches JSON Handling** --> [Gin](https://gin-gonic.com/) stellt JSON Handling out of the Box bereits zur Verfügung
