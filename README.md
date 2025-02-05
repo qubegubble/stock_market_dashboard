@@ -61,7 +61,7 @@ Optionaler Teil:
     - [Angular](https://angular.dev/) daher dieses sich gut für SPA eignet und es sowohl im Unterricht vorgestellt wird
     - [D3js](https://d3js.org/) daher sich dieses für die darstellung von Graphen und Dahsboards sehr gut eignet.
     - Für das Styling wird [Angular Material](https://material.angular.io/) verwendet daher man dort bereits vorgebaute Komponenten hat.
-
+## Backend
 - Für das Backend wird [Expressjs](https://expressjs.com/) verwendet.
   - **Begründung für diese Wahl**:
     - Vorgegeben vom Kurs.
