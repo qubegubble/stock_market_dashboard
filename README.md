@@ -68,5 +68,5 @@ Optionaler Teil:
     - Hat WebSocket support + einfach zu deployen mit Docker.
 
 ## Allgemein
-- Für das deployen wird Docker verwendet.
+- Für das deployen wird Docker verwendet + Github Pages.
 - Für die Datenpersistierung wird [MongoDB](https://www.mongodb.com/) (NoSQL) verwendet.
