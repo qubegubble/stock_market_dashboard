@@ -1,4 +1,5 @@
 # Stock Market Dashboard WEBLAB HS24 Projekt
+## Created by Hrvat Leo
 # Kontext
 Das Stock Market Dashboard stellt verschiedenste Aktien mit live updates zur Verfügung. Dies sollte dazu dienen das Stock traders möglichst schnell Informationen über den Markt bekommen können.
 
