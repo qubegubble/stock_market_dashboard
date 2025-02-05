@@ -66,3 +66,8 @@ Optionaler Teil:
   - **Begründung für diese Wahl**:
     - Vorgegeben vom Kurs.
     - Hat WebSocket support + einfach zu deployen mit Docker.
+- Für die Datenpersistierung wird [MongoDB](https://www.mongodb.com/) (NoSQL) verwendet.
+  - **Begründung für diese Wahl**:
+    - Einfach zu deployen.
+    - Einfach zu verwenden in Kombination mit JavaScript.
+    - Erfahrung mit der Verwendung von NoSQL DB's
