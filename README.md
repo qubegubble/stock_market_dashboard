@@ -54,7 +54,7 @@ Optionaler Teil:
   - User Portfolio (Liste der favorisierten Aktien z.B) wird in einer DB persistiert.
   - Aktuelle Daten werden gecached für schnellen Zugriff.
     
-# Technologiestack (vorübergehender Vorschlag)
+# Technologiestack
 ## Frontend
 - Für das Frontend wird [Angular(Version 19)](https://angular.dev/) + [D3js](https://d3js.org/) verwendet
   - **Begründung für diese Wahl**:
