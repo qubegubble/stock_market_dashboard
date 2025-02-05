@@ -8,19 +8,21 @@ jobs:
   # Step 1: Build & Push Docker Image for Backend
   build-backend:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
 
       - name: Build Docker image
-        run: docker build -t my-app -f stock-backend/Dockerfile stock-backend
+        run: docker build -t stock-backend -f stock-backend/Dockerfile stock-backend
 
       - name: Push Docker image
+        env:
+          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
         run: |
-          echo ${{ secrets.DOCKER_PASSWORD }} | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
-          docker tag my-app:latest my-dockerhub-username/my-app:latest
-          docker push my-dockerhub-username/my-app:latest
+          echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin
+          docker tag stock-backend:latest qubegubble/stock-backend:latest
+          docker push qubegubble/stock-backend:latest
   # TODO : Deploy Backend to Server
 
   # Step 2: Build & Push Docker Image for Frontend
