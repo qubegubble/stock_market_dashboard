@@ -1,0 +1,23 @@
+{
+  "name": "stock-backend",
+  "version": "1.0.0",
+  "description": "Backend for stockmarket dashboard",
+  "homepage": "https://github.com/qubegubble/stock_market_dashboard#readme",
+  "bugs": {
+    "url": "https://github.com/qubegubble/stock_market_dashboard/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qubegubble/stock_market_dashboard.git"
+  },
+  "license": "ISC",
+  "author": "qubegubble",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
