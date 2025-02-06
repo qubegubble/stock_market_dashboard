@@ -20,6 +20,7 @@
             "outputPath": "dist/dashboard",
             "index": "src/index.html",
             "browser": "src/main.ts",
+            "baseHref": "/stock_market_dashboard/dashboard/",
             "polyfills": [
               "zone.js"
             ],

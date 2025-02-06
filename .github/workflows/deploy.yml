@@ -41,11 +41,9 @@ jobs:
         run: cd dashboard && npm install
 
       - name: Build Dashboard
-        run: |
-          cd dashboard
-          npm run build -- --configuration=production --base-href /stock_market_dashboard/
-          cp dist/dashboard/index.html dist/dashboard/404.html
-      - name: Deploy to GitHub Pages
+        run: cd dashboard && npm run build -- --configuration=production --base-href /stock_market_dashboard/dashboard/
+
+      - name: Deploy to Github Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
