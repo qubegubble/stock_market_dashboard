@@ -1,6 +1,6 @@
 
 export default {
-  basePath: '/stock_market_dashboard',
+  basePath: '/stock_market_dashboard/dashboard',
   supportedLocales: {
   "en-US": ""
 },
