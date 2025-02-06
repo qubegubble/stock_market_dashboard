@@ -1,5 +1,3 @@
 {
-  "routes": {
-    "/stock_market_dashboard/dashboard": {}
-  }
+  "routes": {}
 }
