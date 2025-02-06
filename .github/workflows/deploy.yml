@@ -40,8 +40,8 @@ jobs:
       - name: Install Dependencies
         run: cd dashboard && npm install
 
-      - name: Build Angular App
-        run: cd dashboard && npm run build --configuration=production --base-href /stock_market_dashboard/
+      - name: Build Dashboard
+        run: cd dashboard && npm run build -- --configuration=production --base-href /stock_market_dashboard/
 
       - name: Deploy to Github Pages
         uses: JamesIves/github-pages-deploy-action@v4
