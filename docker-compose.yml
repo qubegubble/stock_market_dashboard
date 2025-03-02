@@ -1,19 +1,5 @@
 version: "3.8"
 services:
-  web:
-    build: ./stock-backend
-    container_name: stock-backend
-    ports:
-      - "5001:5000"
-    environment:
-      - NODE_ENV=development
-      - PORT=5000
-      - MONGO_URI=mongodb://mongo:27017/stock
-    depends_on:
-      - mongo
-    volumes:
-      - ./stock-backend:/app
-      - /app/node_modules
   mongo:
     image: mongo:latest
     container_name: stock-mongo

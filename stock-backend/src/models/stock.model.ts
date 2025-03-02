@@ -1,14 +1,15 @@
-import mongoose, { Schema, Document } from 'mongoose';
-import { Stock } from '../interfaces/stock';
+// models/stock.model.ts
+import mongoose from 'mongoose';
 
-export interface StockDocument extends Stock, Document {}
-
-const StockSchema: Schema = new Schema({
+const stockSchema = new mongoose.Schema({
     symbol: { type: String, required: true, unique: true },
     name: { type: String, required: true },
     price: { type: Number, required: true },
     change: { type: Number, required: true },
-    changePercent: { type: Number, required: true },
-});
+    changePercent: { type: mongoose.Schema.Types.Mixed, required: true },
+    lastUpdated: { type: Date, default: Date.now }
+}, { timestamps: true });
 
-export default mongoose.model<StockDocument>('Stock', StockSchema);
+const StockModel = mongoose.model('Stock', stockSchema);
+
+export default StockModel;

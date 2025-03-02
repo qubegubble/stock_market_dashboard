@@ -1,4 +1,4 @@
-import mongoose,{Document, Schema} from "mongoose";
+import mongoose,{Document} from "mongoose";
 import bcrypt from "bcrypt";
 
 export interface User{
@@ -11,11 +11,12 @@ export interface UserDocument extends User, Document{
     comparePassword(candidatePassword: string): Promise<boolean>;
 }
 
-const UserSchema: Schema = new Schema({
-    username: {type: String, required: true, unique: true},
-    password: {type: String, required: true},
-    createdAt: {type: Date, default: Date.now}
-});
+const UserSchema = new mongoose.Schema({
+    name: { type: String, required: true },
+    firstName: { type: String, required: true },
+    email: { type: String, required: true, unique: true },
+    password: { type: String, required: true }
+}, { timestamps: true });
 
 UserSchema.pre<UserDocument>("save", async function(next){
     if (!this.isModified('password')) {

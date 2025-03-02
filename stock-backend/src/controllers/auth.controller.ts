@@ -25,9 +25,9 @@ const router = Router();
  *       400:
  *         description: Invalid input
  */
-router.post('/register', async (req: Request, res: Response):Promise<any> => {
+router.post('/register', async (req: Request, res: Response): Promise<any> => {
     try {
-        const { email, password } = req.body;
+        const { name, firstName, email, password } = req.body;
         if (!email || !password) {
             return res.status(400).json({ error: 'Email and password are required.' });
         }
@@ -38,11 +38,14 @@ router.post('/register', async (req: Request, res: Response):Promise<any> => {
             return res.status(400).json({ error: 'User already exists.' });
         }
 
-        // Create new user
-        const newUser = new UserModel({ email, password });
+        // Create new user with all fields
+        const newUser = new UserModel({ name, firstName, email, password });
         await newUser.save();
 
-        return res.status(201).json({ message: 'User created successfully.' });
+        return res.status(201).json({
+            message: 'User created successfully.',
+            user: { name, firstName, email }
+        });
     } catch (error) {
         console.error('Error registering user:', error);
         return res.status(500).json({ error: 'Internal server error.' });
