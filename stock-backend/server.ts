@@ -6,9 +6,9 @@ dotenv.config();
 
 const PORT = process.env.PORT || 5000;
 const STOCK_SYMBOLS = [
-    'AAPL', 'MSFT', 'GOOGL', 'AMZN', 'META',
-    'TSLA', 'NVDA', 'JPM', 'V', 'JNJ',
-    // Add more symbols up to 50
+    "AAPL", "MSFT", "GOOGL", "AMZN", "META", "TSLA", "BRK.B", "NVDA", "JPM", "V",
+    "JNJ", "WMT", "UNH", "PG", "HD", "DIS", "MA", "BAC", "XOM", "VZ",
+    "PFE", "KO", "INTC"
 ];
 
 app.listen(PORT, () => {

@@ -1,0 +1,41 @@
+<div class="dashboard-container">
+  <div class="search-section">
+    <h2>Add Stocks to Your Dashboard</h2>
+    <div class="search-container">
+      <input
+        type="text"
+        placeholder="Search stocks by symbol or company name..."
+        [(ngModel)]="searchQuery"
+        (keyup)="onSearchKeyUp($event)"
+        class="search-input">
+      <button class="search-button" (click)="searchStocks()">Search</button>
+    </div>
+
+    <div class="search-results" *ngIf="searchResults.length > 0">
+      <div class="result-item" *ngFor="let stock of searchResults">
+        <div class="stock-info">
+          <span class="stock-symbol">{{ stock.symbol }}</span>
+          <span class="stock-name">{{ stock.name }}</span>
+        </div>
+        <button class="add-button" (click)="addStockToDashboard(stock)">Add</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="stocks-grid">
+    <div class="stock-card" *ngFor="let stock of dashboardStocks">
+      <div class="stock-header">
+        <h3>{{ stock.symbol }}</h3>
+        <span class="stock-company">{{ stock.name }}</span>
+        <button class="remove-button" (click)="removeStock(stock)">×</button>
+      </div>
+      <div class="stock-chart" [id]="'chart-' + stock.symbol"></div>
+      <div class="stock-details">
+        <div class="price">{{ stock.price | currency }}</div>
+        <div class="change" [ngClass]="stock.change >= 0 ? 'positive' : 'negative'">
+          {{ stock.change | number:'+1.2-2' }}%
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

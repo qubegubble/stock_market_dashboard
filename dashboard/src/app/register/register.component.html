@@ -1,0 +1,50 @@
+<div class="register-container">
+  <h2>Register your account here</h2>
+  <form #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)">
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input id="name" type="text" name="name" ngModel required />
+      <div class="error-message" *ngIf="registerForm.submitted && registerForm.controls['name']?.errors?.['required']">
+        Name is required.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="firstName">First Name:</label>
+      <input id="firstName" type="text" name="firstName" ngModel required />
+      <div class="error-message" *ngIf="registerForm.submitted && registerForm.controls['firstName']?.errors?.['required']">
+        First Name is required.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input id="email" type="email" name="email" ngModel required />
+      <div class="error-message" *ngIf="registerForm.submitted && registerForm.controls['email']?.errors?.['required']">
+        Email is required.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input id="password" type="password" name="password" ngModel required />
+      <div class="error-message" *ngIf="registerForm.submitted && registerForm.controls['password']?.errors?.['required']">
+        Password is required.
+      </div>
+    </div>
+    <button type="submit">Register</button>
+  </form>
+  <p>Already have an account? <a routerLink="/login">Login here</a></p>
+  <div class="error-popup-overlay" *ngIf="errorMessage" (click)="dismissError()">
+    <div class="error-popup" (click)="$event.stopPropagation()">
+      <div class="error-header">
+        <h3>Registration Failed</h3>
+        <button class="close-btn" (click)="dismissError()">&times;</button>
+      </div>
+      <div class="error-content">
+        <p>{{ errorMessage }}</p>
+      </div>
+      <div class="error-actions">
+        <button (click)="dismissError()">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+

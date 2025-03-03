@@ -1,6 +1,7 @@
-import { Router, Request, Response } from 'express';
+import {Router, Request, Response} from 'express';
 import UserModel from '../models/user.model';
 import jwt from 'jsonwebtoken';
+import {AuthRequest, verifyToken} from '../middlewares/auth.middleware';
 
 const router = Router();
 
@@ -101,6 +102,22 @@ router.post('/login', async (req: Request, res: Response):Promise<any> => {
     } catch (error) {
         console.error('Error logging in:', error);
         return res.status(500).json({ error: 'Internal server error.' });
+    }
+});
+
+router.get('/me', verifyToken, async (req: Request, res: Response): Promise<any> => {
+    try {
+        const userId = (req as AuthRequest).userId;
+        const user = await UserModel.findById(userId).select('-password');
+
+        if (!user) {
+            return res.status(404).json({ error: 'User not found' });
+        }
+
+        return res.status(200).json(user);
+    } catch (error) {
+        console.error('Error fetching user details:', error);
+        return res.status(500).json({ error: 'Internal server error' });
     }
 });
 

@@ -1,0 +1,60 @@
+<div class="login-container">
+  <h2>Login</h2>
+
+  <form (ngSubmit)="login()" #loginForm="ngForm" novalidate>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        [(ngModel)]="email"
+        required
+        #emailField="ngModel">
+      <div class="error-message" *ngIf="(emailField.invalid && (emailField.touched || loginForm.submitted))">
+        Email is required
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        [(ngModel)]="password"
+        required
+        #passwordField="ngModel">
+      <div class="error-message" *ngIf="(passwordField.invalid && (passwordField.touched || loginForm.submitted))">
+        Password is required
+      </div>
+    </div>
+
+    <!-- Show general error message for non-credential errors -->
+    <div *ngIf="errorMessage && !showPopup" class="error-message">
+      {{ errorMessage }}
+    </div>
+
+    <button type="submit" [disabled]="isLoading">
+      {{ isLoading ? 'Logging in...' : 'Login' }}
+    </button>
+  </form>
+
+  <p>Don't have an account? <a routerLink="/register">Register</a></p>
+</div>
+
+<!-- Keep the existing popup for authentication errors -->
+<div class="error-popup-overlay" *ngIf="showPopup" (click)="dismissError()">
+  <div class="error-popup" (click)="$event.stopPropagation()">
+    <div class="error-header">
+      <h3>Login Failed</h3>
+      <button class="close-btn" (click)="dismissError()">&times;</button>
+    </div>
+    <div class="error-content">
+      <p>{{ errorMessage }}</p>
+    </div>
+    <div class="error-actions">
+      <button (click)="dismissError()">Close</button>
+    </div>
+  </div>
+</div>
