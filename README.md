@@ -17,14 +17,23 @@ Eine sehr frustrierende Arbeit war das deployen der Dokumentation auf Github Pag
 ### Arbeitsjournal
 
 04.02.25 - ~2h Anforderungen definiert
+
 07.02.25 - ~4h Projekt aufgesetzt
+
 15.02.25 - ~8h Projekt fertig aufgesetzt, alle benötigten Sachen installiert, Backend angefangen
+
 22.02.25 - ~4h Weiter am Backend gearbeitet
+
 23.02.25 - ~4h Weiter am Backend gearbeitet
+
 28.02.25 - ~8h Backend fertig gemacht
+
 01.03.25 - ~4h Frontend angefangen
+
 02.03.25 - ~10h Frontend weiter + Kommunikation zwischen Frontend und Backend + Auth implementiert
+
 03.03.25 - ~8h Frotend fertig designed + Kommunikation zwischen Frontend und Backend getestet
+
 04.03.25 - ~12h Finishing touches + Alles getestet + Dokumentaion fertig geschrieben.
 
 
