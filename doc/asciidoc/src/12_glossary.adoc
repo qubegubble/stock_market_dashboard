@@ -1,0 +1,16 @@
+== Glossar
+
+[cols="2,1,1",options="header"]
+|===
+| Begriff | Definition | Quelle
+|Node.js | Node.js ist eine serverseitige Plattform, die auf der JavaScript-Laufzeitumgebung von Chrome basiert. | https://nodejs.org/en
+|Angular | Angular ist ein TypeScript-basiertes Open-Source-Framework zur Entwicklung von Single-Page-Webanwendungen. | https://angular.dev/
+|Express.js | Express.js ist ein minimalistisches Webframework für Node.js, das eine einfache und flexible API für die Entwicklung von Webanwendungen und APIs bietet. | https://expressjs.com/
+|MongoDB | MongoDB ist eine dokumentenorientierte NoSQL-Datenbank, die sich besonders für die Speicherung unstrukturierter Daten eignet. | https://www.mongodb.com/
+|Docker | Docker ist eine Open-Source-Plattform zur Automatisierung der Bereitstellung von Anwendungen in Containern. | https://www.docker.com/
+|JWT | JSON Web Token (JWT) ist ein offener Standard (RFC 7519) zur sicheren Übertragung von Informationen zwischen Parteien als JSON-Objekt. | https://jwt.io/
+|RxJS | RxJS ist eine JavaScript-Bibliothek zur Programmierung mit asynchronen Datenströmen und Ereignissen. | https://rxjs.dev/
+|Jasmine | Jasmine ist ein JavaScript-Testframework für die Entwicklung von Unit- und Integrationstests. | https://jasmine.github.io/
+|D3js | D3.js ist eine JavaScript-Bibliothek zur Erstellung von interaktiven Datenvisualisierungen im Web. | https://d3js.org/
+|===
+

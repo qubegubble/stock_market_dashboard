@@ -1,0 +1,32 @@
+== Einführung & Ziele
+Das Ziel des Stock Market Dashboards ist es, Aktien in Echtzeit anzuzeigen. Dies soll durch ein Dashboard realisiert werden, das nach Belieben erstellt und modifiziert werden kann.
+
+=== Das Projekt hat folgende Ziele:
+* Anzeige von Aktienkursen in Echtzeit.
+* Benutzerdefinierte Dashboards erstellen und bearbeiten.
+* Benutzerregistrierung und -authentifizierung.
+* Benutzerfreundliche Oberfläche.
+
+
+
+=== Qualitätsziele
+Das Projekt soll, ausgehend von den grundlegenden Anforderungen, folgende Qualitätsziele erfüllen:
+[options="header", cols="1,2,4"]
+|===
+|Priorität |Qualitätsziel |Beschreibung
+|1| Performance | Schnelle Ladezeiten und reibungslose Benutzererfahrung.
+|2| Benutzerfreundlichkeit | Intuitive Benutzeroberfläche und einfache Bedienung.
+|3| Zugangskontrolle | Sichere Benutzerregistrierung und -authentifizierung.
+|4| Persistenz | Zuverlässige Speicherung von Benutzerdaten und Aktieninformationen.
+|5| Personalisierung | Anpassbare Dashboards und Benutzeroberfläche.
+|===
+
+=== Stakeholder
+Die Hauptinteressengruppen des Projekts sind:
+[options="header", cols="1,2"]
+|===
+|Rolle | Erwartungen
+|Benutzer | Einfache Bedienung und schnelle Anzeige von Aktienkursen.
+|Entwickler | Gut strukturierter und dokumentierter Code.
+|Dozent | Erwarten eine vollständige und pünktliche Lieferung des Projekts.
+|===

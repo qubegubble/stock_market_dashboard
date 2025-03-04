@@ -1,0 +1,21 @@
+= Stock Market Dashboard Dokumentation WEBLAB
+Hrvat Leo
+:doctype: book
+:toc: left
+:toclevels: 3
+:sectnums:
+:imagesdir: ../images
+:source-highlighter: highlight.js
+
+include::01_introduction_goals.adoc[leveloffset=+0]
+include::02_architecture_constraints.adoc[leveloffset=+0]
+include::03_scope_and_context.adoc[leveloffset=+0]
+include::04_solution_strategy.adoc[leveloffset=+0]
+include::05_building_block_view.adoc[leveloffset=+0]
+include::06_runtime_view.adoc[leveloffset=+0]
+include::07_distribution_layers.adoc[leveloffset=+0]
+include::08_cross_cutting_concepts.adoc[leveloffset=+0]
+include::09_architectural_decisions.adoc[leveloffset=+0]
+include::10_quality_requirements.adoc[leveloffset=+0]
+include::11_risks_and_technical_debt.adoc[leveloffset=+0]
+include::12_glossary.adoc[leveloffset=+0]

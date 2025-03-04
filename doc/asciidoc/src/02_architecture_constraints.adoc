@@ -1,0 +1,31 @@
+== Randbedingungen
+
+Die Enwticklung des Stock Market Dashboards unterliegt verschiedenen technischen und organisatorischen Randbedingungen, die im Folgenden erläutert werden.
+
+=== Technische Randbedingungen
+[options="header", cols="1,2"]
+|===
+| Randbedingung | Beschreibung
+| Betriebssystem | Das Stock Market Dashboard wird auf einem Linux-Server betrieben.
+| Programmiersprache | Die Anwendung wird Front- wie auch Backend mit Javascript/Typescript entwickelt.
+| Framework | Das Frontend wird mit Angular und das Backend mit Expressjs realisiert.
+| Datenbank | Die Datenbank wird mit MongoDB realisiert.
+| CI/CD | Die Anwendung wird mit GitHub Actions automatisiert getestet und deployed.
+|===
+
+=== Organisatorische Randbedingungen
+[options="header", cols="1,2"]
+|===
+| Randbedingung | Beschreibung
+| WEBLAB | Das Projekt wird im Rahmen der Blockwoche WEBLAB an der Hochschule Luzern - Departement Informatik durchgeführt
+| Hosting | Die Anwendung wird aufgrund von keinem Server nur lokal gehosted.
+|===
+
+=== Konventionen
+[options="header", cols="1,2"]
+|===
+| Konvention | Beschreibung
+| Git | Der Code wird mittels Git verwaltet und auf GitHub gehosted.
+| Dokumentation | Die Dokumentation wird in Asciidoc geschrieben und auf GitHub gehosted.
+| Codestruktur | Der Code wird nach dem MVC-Pattern strukturiert.
+|===

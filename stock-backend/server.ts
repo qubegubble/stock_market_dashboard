@@ -21,7 +21,6 @@ mongoose.connect(MONGO_URI)
     .then(() => {
         server.listen(PORT, () => {
             console.log(`Server running on port ${PORT}`);
-            console.log('Initiating stock data fetch in background...');
         });
     })
     .catch(err => console.error('MongoDB connection error:', err));

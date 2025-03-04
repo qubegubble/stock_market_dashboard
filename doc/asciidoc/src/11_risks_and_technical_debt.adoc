@@ -1,0 +1,21 @@
+== Risiken und Technische Schulden
+
+=== Risiken
+* Es wurde keine Teststrategie implementiert sowie auch automatisierte Tests. Dies führt dazu, dass die Software nicht getestet ist und somit Fehler in der Software vorhanden sein können. Grund dafür ist Zeitdruck und der Mangel an Erfarhung mit Testen von Webprojekten.
+* Es wurden keine minimalen Passwort Anforderungen implementiert. Dies führt dazu, dass Benutzer unsichere Passwörter verwenden können.
+* Es wurde keine Rate Limitierung implementiert. Dies führt dazu, dass ein Benutzer unendlich viele Anfragen an die API senden kann.
+
+=== Massnahmen zur Risikoverminderung
+* Implementierung von automatisierten Tests
+* Implementierung von minimalen Passwort Anforderungen
+* Implementierung von Rate Limitierung
+
+
+=== Technische Schulden
+* Fehlende automatisierte Test für die Angular Komponenten
+* Fehlende automatisierte Test für die Express.js API
+* Fehlende Rate Limitierung
+* Hardcodierte API Endpoints
+* Fehlende Dokumentation
+* Fehlende Logging und Monitoring
+* MongoDB-Schema ohne ausreichende Validierung

@@ -1,0 +1,53 @@
+== Bausteinsicht
+
+=== Übersicht System
+
+Die Bausteinsicht zeigt die statische Zerlegung des Systems in Bausteine (Module, Komponenten, Subsysteme) sowie deren Beziehungen zueinander.
+
+image::../images/übersicht_systemdrawio.drawio.png[align="center",width=90%,title="Systemübersicht"]
+=== Ebene 1: Hauptkomponenten
+
+[options="header", cols="1,3"]
+|===
+| Baustein | Verantwortlichkeit
+| Frontend (Angular) | Präsentationslogik, Benutzerinteraktion, reaktive Darstellung der Aktieninformationen
+| Backend (Node.js/Express) | Geschäftslogik, API-Bereitstellung, Datenbankzugriff, Integration externer Dienste
+| MongoDB | Persistierung von Benutzer-, Dashboard- und Aktiendaten
+| External Stock APIs | Bereitstellung von Echtzeit- und historischen Aktiendaten
+|===
+
+=== Ebene 2: Frontend-Komponenten
+
+[options="header", cols="1,3"]
+|===
+| Baustein | Verantwortlichkeit
+| Core Module | Kernfunktionalitäten wie Authentifizierung, HTTP-Interceptoren für Tokens und Routing-Guards
+| Shared Module | Wiederverwendbare UI-Komponenten, Pipes und Direktiven für die gesamte Anwendung
+| Authentication Module | Verwaltung der Benutzeranmeldung, -registrierung und Profilbearbeitung
+| Dashboard Module | Darstellung und Konfiguration des personalisierten Dashboards des Benutzers
+| Stock Visualization Module | Darstellung von Aktienkursen in verschiedenen Formaten (Charts, Listen, Details)
+| User Settings Module | Verwaltung der Benutzereinstellungen und Präferenzen
+|===
+
+=== Ebene 2: Backend-Komponenten
+
+[options="header", cols="1,3"]
+|===
+| Baustein | Verantwortlichkeit
+| API Routes | Definition der REST-Endpunkte und Weiterleitung an Controller
+| Controllers | Verarbeitung von HTTP-Anfragen und -Antworten, Eingabevalidierung
+| Services | Implementierung der Geschäftslogik und Interaktion mit der Datenbank
+| Models | Definition der Datenstruktur und Validierungsschemata
+| Middleware | Querschnittliche Funktionalitäten wie Authentifizierung, Fehlerbehandlung, Ratenbegrenzung
+|===
+
+=== Ebene 3: Wichtige Schnittstellen
+
+[options="header", cols="1,2,2"]
+|===
+| Schnittstelle | Beschreibung | Technologie
+| Frontend zu Backend | REST-API für alle Datenzugriffe und -manipulationen | HTTP/JSON, JWT für Auth
+| Backend zu Datenbank | Datenzugriff für Persistierung und Abfrage | Mongoose/MongoDB Driver
+| Backend zu externen APIs | Abrufen von Aktieninformationen | HTTP/REST, API Keys
+| WebSocket-Verbindung | Echtzeit-Updates für Aktienkurse | Socket.io
+|===

@@ -1,0 +1,15 @@
+== Qualitätsanforderungen
+
+Das Stock Market Dashboard soll folgende Qualitätsanforderungen erfüllen:
+
+[options="header", cols="2,2,2,2"]
+|===
+|Priorität |User Story |Akzeptanzkriterien | Implementiert
+|Must | Als Benutzer möchte ich mich registrieren/anmelden können auf der Seite. | Der Benutzer kann sich mit einer E-Mail-Adresse, Name und einem Passwort registrieren und anmelden.| Wurde vollständig implementiert.
+|Must | Als Benutzer möchte ich Aktien meinem Dashboard hinzufügen können welche bei erneuter Anmeldung oder laden der Seite persitent bleiben. | Der Benutzer kann Aktien zu seinem Dashboard hinzufügen und diese bleiben auch nach einem Neuladen der Seite erhalten.| Wurde vollständig implementiert.
+|Could | Als Benutzer kann ich mein Dashboard beliebig anpassen. | Der Benutzer kann die Anordnung der Aktien auf dem Dashboard anpassen.| Wurde vollständig implementiert.
+|Should | Als Benutzer erhalte ich live-updates der Aktien ohne das ein neuladen der Webseite benötigt wird| Der Benutzer erhält in Echtzeit die neusten Aktienkurse.| Wurde vollständig implementiert.
+|Could | Das Dashboard zeigt Aktien als Graphen an | Der Benutzer kann die Aktien als Graphen anzeigen lassen.| Wurde vollständig implementiert.
+|Should | Als Benutzer kann ich mein User Portfolio und historische Aktien Daten abspeichern können| Der Benutzer kann sein Portfolio abspeichern und historische Aktienkurse einsehen.| Wurde nicht implementiert aufgrund von Zeitmangel.
+|Should | Als Benutzer kann ich Aktien favorisieren| Der Benutzer kann Aktien favorisieren und diese werden auf dem Dashboard hervorgehoben.| Wurde nicht implementiert daher das Dashboard bereits modifizierbar ist und man Aktien so anordnen kann wie man möchte.
+|===

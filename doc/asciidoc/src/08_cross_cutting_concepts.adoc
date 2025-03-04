@@ -1,0 +1,9 @@
+== Querschnittliche Konzepte
+
+Querschnittliche Konzepte sind Aspekte, die mehrere Bausteine oder Schichten eines Systems betreffen und nicht in einem einzelnen Baustein oder einer einzelnen Schicht lokalisiert sind. Sie schneiden durch die Architektur und beeinflussen die Implementierung und das Verhalten des Systems. Die folgenden querschnittlichen Konzepte sind in der Architektur des Aktienverwaltungssystems relevant:
+
+=== Authentifizierung und Autorisierung
+Die Authentifizierung und Autorisierung von Benutzern ist ein querschnittliches Konzept, das die gesamte Anwendung betrifft. Benutzer müssen sich anmelden, um auf das System zuzugreifen, und dürfen nur auf bestimmte Ressourcen zugreifen, wenn sie die erforderlichen Berechtigungen haben. Dieses Konzept umfasst die Verwaltung von Benutzerkonten, die Überprüfung von Anmeldeinformationen, die Ausstellung und Überprüfung von Zugriffstoken sowie die Definition von Rollen und Berechtigungen.
+
+=== Logging und Monitoring
+Das Logging und Monitoring ist ein querschnittliches Konzept, das die Nachverfolgung von Aktivitäten und das Überwachen des Systemverhaltens umfasst. Durch das Protokollieren von Ereignissen und Metriken können Entwickler und Administratoren das Systemverhalten analysieren, Fehler diagnostizieren, Leistungsprobleme identifizieren und Sicherheitsbedrohungen erkennen. Dieses Konzept beinhaltet die Definition von Protokollierungsrichtlinien, die Implementierung von Protokollierungsmechanismen und das Einrichten von Überwachungssystemen.

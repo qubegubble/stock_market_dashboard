@@ -1,0 +1,24 @@
+== Verteilungsschicht
+
+Die Software wird in drei Schichten aufgeteilt: Frontend, Backend und Datenbank. Die Frontend-Schicht ist für die Darstellung der Benutzeroberfläche zuständig, das Backend für die Geschäftslogik und die Datenbank für die Speicherung der Daten.
+
+=== Deployment
+Der Build wird auf Github durch Github Actions realisiert. Jedoch wird die Anwendung nicht auf einem Server gehostet, sondern nur lokal betrieben. Grund dafür war das keine Serverressourcen zur Verfügung standen.
+
+
+=== Domänenmodell
+Das Domänenmodell ist in drei Schichten aufgeteilt: Frontend, Backend und Datenbank. Die Frontend-Schicht ist für die Darstellung der Benutzeroberfläche zuständig, das Backend für die Geschäftslogik und die Datenbank für die Speicherung der Daten.
+
+=== Schnittstellen
+Die Kommunikation zwischen den Schichten erfolgt über REST-APIs. Das Frontend sendet HTTP-Anfragen an das Backend, das die Anfragen verarbeitet und die Daten aus der Datenbank abruft. Die Daten werden im JSON-Format übertragen.
+[options "header", cols="1,2"]
+|===
+| API | Beschreibung
+| GET /api/stocks | Abrufen einer Liste von Aktien
+| GET /api/stocks/:symbol | Abrufen von Details zu einer bestimmten Aktie
+| POST /api/user-stocks | Hinzufügen einer neuen Aktie zum Dashboard
+| GET /api/user-stocks | Abrufen der Aktien im Dashboard
+| PUT /api/stocks/:symbol | Aktualisieren der Daten einer Aktie
+| POST /api/auth/register | Registrierung eines neuen Benutzers
+| POST /api/auth/login | Anmeldung eines Benutzers
+|===

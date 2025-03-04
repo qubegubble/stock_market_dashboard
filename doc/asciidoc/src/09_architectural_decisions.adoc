@@ -1,0 +1,17 @@
+== Architekturentscheidungen
+In diesem Kapitel werden die wichtigsten Architekturenscheidungen begründet und beschrieben.
+
+=== Frontend
+Für das Frontend wird Angular verwendet. Dies eignet sich besonders für Single Page Applications. Angular bietet viele Features out-of-the-box, wie z.B. Dependency Injection, Routing, Forms, HTTP Client und Observables. Zudem ist Angular sehr gut dokumentiert und hat eine grosse Community. Dies erleichtert die Einarbeitung und die Fehlersuche.
+
+=== Backend
+Für das Backend wird Express.js verwendet. Express.js ist ein minimalistisches Webframework für Node.js. Es bietet eine einfache und flexible API für das Erstellen von Webanwendungen und APIs. Express.js ist sehr performant und eignet sich gut für kleine bis mittlere Projekte. Zudem gibt es viele Middleware und Plugins, die die Entwicklung erleichtern.
+
+=== Datenbank
+Für die Datenbank wird MongoDB verwendet. MongoDB ist eine NoSQL-Datenbank, die sich besonders für unstrukturierte Daten eignet. MongoDB speichert Daten im BSON-Format (Binary JSON) und bietet eine flexible Datenmodellierung. Zudem ist MongoDB sehr performant und skalierbar. Dies eignet sich gut für die Speicherung von Aktiendaten.
+
+=== Authentifizierung
+Für die Authentifizierung wird JWT (JSON Web Token) verwendet. JWT ist ein sicheres und zustandsloses Authentifizierungsverfahren. Der Benutzer erhält nach der Anmeldung ein Token, das er für alle weiteren Anfragen verwenden muss. Das Token enthält alle nötigen Informationen zur Authentifizierung und ist verschlüsselt. Dies ist sicherer als herkömmliche Session-Cookies.
+
+=== Aktien Darstellung
+Für die Aktiendarstellung wird D3js verwendet. D3js ist eine JavaScript-Bibliothek zur Erstellung von interaktiven Datenvisualisierungen im Web. D3js bietet viele Funktionen zur Manipulation von DOM-Elementen und zur Erstellung von SVG-Grafiken. Dies eignet sich gut für die Darstellung von Aktiendaten in Form von Charts und Graphen.
