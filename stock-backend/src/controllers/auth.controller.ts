@@ -33,13 +33,11 @@ router.post('/register', async (req: Request, res: Response): Promise<any> => {
             return res.status(400).json({ error: 'Email and password are required.' });
         }
 
-        // Check if user already exists
         const existingUser = await UserModel.findOne({ email });
         if (existingUser) {
             return res.status(400).json({ error: 'User already exists.' });
         }
 
-        // Create new user with all fields
         const newUser = new UserModel({ name, firstName, email, password });
         await newUser.save();
 
@@ -81,19 +79,16 @@ router.post('/login', async (req: Request, res: Response):Promise<any> => {
             return res.status(400).json({ error: 'Email and password are required.' });
         }
 
-        // Find user
         const user = await UserModel.findOne({ email });
         if (!user) {
             return res.status(400).json({ error: 'Invalid credentials.' });
         }
 
-        // Compare password
         const isMatch = await user.comparePassword(password);
         if (!isMatch) {
             return res.status(400).json({ error: 'Invalid credentials.' });
         }
 
-        // Generate JWT (store secret in an environment variable)
         const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET || 'secretkey', {
             expiresIn: '1h',
         });

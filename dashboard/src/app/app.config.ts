@@ -7,12 +7,14 @@ import { provideAnimations } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
+import { WebSocketService } from './websocket.service';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes),
     provideHttpClient(withInterceptors([authInterceptor])),
     provideAnimations(),
-    importProvidersFrom(MatIconModule, MatMenuModule, MatButtonModule)
+    importProvidersFrom(MatIconModule, MatMenuModule, MatButtonModule),
+    WebSocketService,
   ]
 };

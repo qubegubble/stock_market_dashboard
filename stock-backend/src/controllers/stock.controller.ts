@@ -67,7 +67,6 @@ router.get('/search', async (req: Request, res: Response): Promise<any> => {
     const allStocks = await getAllStocks();
     const searchTerm = query.toLowerCase();
 
-    // Filter stocks that match the search term
     const results = allStocks.filter(stock =>
         stock.symbol.toLowerCase().includes(searchTerm) ||
         stock.name.toLowerCase().includes(searchTerm)
@@ -102,24 +101,19 @@ router.get('/search', async (req: Request, res: Response): Promise<any> => {
  */
 router.get('/user-stocks', authenticateUser, async (req: Request, res: Response):Promise<any> => {
   try {
-    // Add debug logging
     console.log('User from request:', req.user._id);
     console.log('User saved stocks:', req.user.savedStocks);
 
-    // Ensure savedStocks exists and is an array
     const userStocks = Array.isArray(req.user.savedStocks) ? req.user.savedStocks : [];
 
     if (userStocks.length === 0) {
-      return res.json([]);  // Return empty array if no stocks saved
+      return res.json([]);
     }
-
-    // Fetch detailed data for each stock with better error handling
     const stocks = await Promise.all(
         userStocks.map(async (symbol: string) => {
           try {
             const stock = await getStockBySymbol(symbol);
             if (!stock) {
-              // Handle case where stock symbol is invalid
               return {
                 symbol,
                 name: symbol,
@@ -129,12 +123,14 @@ router.get('/user-stocks', authenticateUser, async (req: Request, res: Response)
               };
             }
             return {
-              ...stock,
+              symbol: stock.symbol,
+              name: stock.name,
+              price: stock.price,
+              change: stock.change,
               data: generateMockHistoricalData(symbol)
             };
           } catch (err) {
             console.error(`Error fetching stock ${symbol}:`, err);
-            // Return placeholder data instead of failing
             return {
               symbol,
               name: symbol,
@@ -147,7 +143,7 @@ router.get('/user-stocks', authenticateUser, async (req: Request, res: Response)
     );
 
     res.json(stocks);
-  }  catch (error: any) {
+  } catch (error: any) {
     console.error('Failed to fetch user stocks:', error);
     res.status(500).json({ error: `Failed to fetch user stocks: ${error.message || 'Unknown error'}` });
   }
@@ -184,8 +180,6 @@ router.get('/user-stocks', authenticateUser, async (req: Request, res: Response)
 router.post('/user-stocks', authenticateUser, async (req: Request, res: Response):Promise<any> => {
   try {
     const { stocks } = req.body;
-
-    // Add validation
     if (!stocks) {
       return res.status(400).json({ error: 'No stocks provided' });
     }
@@ -193,24 +187,17 @@ router.post('/user-stocks', authenticateUser, async (req: Request, res: Response
     if (!Array.isArray(stocks)) {
       return res.status(400).json({ error: 'Invalid request format' });
     }
-
-    // Log the incoming data
     console.log('Saving stocks for user:', req.user._id);
     console.log('Raw stocks data:', stocks);
-
-    // Extract just the symbols and filter out null/undefined values
     const symbols = stocks
-        .filter(stock => stock && stock.symbol) // Filter out null/undefined stocks
+        .filter(stock => stock && stock.symbol)
         .map(stock => stock.symbol);
 
     console.log('Filtered symbols to save:', symbols);
-
-    // Don't proceed if no valid symbols
     if (symbols.length === 0) {
       return res.status(400).json({ error: 'No valid stock symbols provided' });
     }
 
-    // Update user with better error handling
     try {
       req.user.savedStocks = symbols;
       await req.user.save();
@@ -251,7 +238,6 @@ router.post('/user-stocks', authenticateUser, async (req: Request, res: Response
  *       500:
  *         description: Server error
  */
-// In stock.controller.ts, update the /details/:symbol endpoint
 router.get('/details/:symbol', async (req: Request, res: Response):Promise<any> => {
   try {
     const stock = await getStockBySymbol(req.params.symbol);
@@ -260,7 +246,6 @@ router.get('/details/:symbol', async (req: Request, res: Response):Promise<any> 
       return res.status(404).json({ error: 'Stock not found' });
     }
 
-    // Add mock historical data for D3 visualization
     const stockWithData = {
       symbol: stock.symbol,
       name: stock.name,
@@ -269,7 +254,6 @@ router.get('/details/:symbol', async (req: Request, res: Response):Promise<any> 
       data: generateMockHistoricalData(stock.symbol)
     };
 
-    // Return a clean object, not the Mongoose document
     res.json(stockWithData);
   } catch (error: any) {
     res.status(500).json({ error: 'Failed to fetch stock details' });
@@ -367,12 +351,10 @@ function generateMockHistoricalData(symbol: string) {
   const now = new Date();
   const seed = symbol.charCodeAt(0) + symbol.charCodeAt(symbol.length - 1);
 
-  // Generate 30 days of data with pseudorandom values based on symbol
   for (let i = 30; i >= 0; i--) {
     const date = new Date(now);
     date.setDate(date.getDate() - i);
 
-    // Generate somewhat consistent values based on symbol
     const randomFactor = Math.sin(i * 0.1 + seed) * 10;
     const value = 100 + randomFactor + (Math.random() * 10);
 

@@ -22,18 +22,41 @@
     </div>
   </div>
 
-  <div class="stocks-grid">
-    <div class="stock-card" *ngFor="let stock of dashboardStocks">
-      <div class="stock-header">
-        <h3>{{ stock.symbol }}</h3>
-        <span class="stock-company">{{ stock.name }}</span>
-        <button class="remove-button" (click)="removeStock(stock)">×</button>
-      </div>
-      <div class="stock-chart" [id]="'chart-' + stock.symbol"></div>
-      <div class="stock-details">
-        <div class="price">{{ stock.price | currency }}</div>
-        <div class="change" [ngClass]="stock.change >= 0 ? 'positive' : 'negative'">
-          {{ stock.change | number:'+1.2-2' }}%
+  <div class="stocks-container">
+    <div
+      cdkDropList
+      [cdkDropListData]="dashboardStocks"
+      (cdkDropListDropped)="drop($event)"
+      class="stocks-grid">
+      <div
+        *ngFor="let stock of dashboardStocks"
+        class="stock-card"
+        [ngClass]="getStockSize(stock)"
+        cdkDrag>
+        <div class="stock-header" cdkDragHandle>
+          <div class="drag-handle">
+            <svg width="16" height="16" viewBox="0 0 24 24">
+              <path fill="#666" d="M3,15H21V13H3V15M3,19H21V17H3V19M3,11H21V9H3V11M3,5V7H21V5H3Z" />
+            </svg>
+          </div>
+          <h3>{{ stock.symbol }}</h3>
+          <span class="stock-company">{{ stock.name }}</span>
+          <button class="remove-button" (click)="removeStock(stock)">×</button>
+        </div>
+        <div class="stock-chart" [id]="'chart-' + stock.symbol"></div>
+        <div class="stock-details">
+          <div>
+            <span class="symbol-label">{{ stock.symbol }}</span>
+            <div class="price">{{ stock.price | currency }}</div>
+          </div>
+          <div class="change" [ngClass]="stock.change >= 0 ? 'positive' : 'negative'">
+            {{ stock.change | number:'+1.2-2' }}%
+          </div>
+        </div>
+        <div class="resize-handle" (mousedown)="startResize($event, stock)" (click)="$event.stopPropagation()">
+          <svg width="16" height="16" viewBox="0 0 24 24">
+            <path fill="#666" d="M22,22H20V20H22V22M22,18H20V16H22V18M18,22H16V20H18V22M18,18H16V16H18V18M14,22H12V20H14V22M22,14H20V12H22V14Z" />
+          </svg>
         </div>
       </div>
     </div>

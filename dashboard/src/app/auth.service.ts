@@ -1,4 +1,3 @@
-// dashboard/src/app/auth.service.ts
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable, of } from 'rxjs';
@@ -41,18 +40,14 @@ export class AuthService {
     private http: HttpClient,
     private router: Router
   ) {
-    // Simplified initialization to avoid HTTP calls during construction
     this.checkTokenOnInit();
   }
 
-  // Simple token check without HTTP calls to avoid circular dependency
   private checkTokenOnInit(): void {
     const token = this.getToken();
     this.isAuthenticatedSubject.next(!!token);
     this.authInitializedSubject.next(true);
 
-    // If there's a token, fetch user info after a slight delay
-    // to break the initialization cycle
     if (token) {
       setTimeout(() => {
         this.refreshUserInfo().subscribe();

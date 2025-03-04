@@ -1,4 +1,3 @@
-// stock-backend/src/middlewares/auth.middleware.ts
 import { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
 import UserModel from "../models/user.model";
@@ -46,7 +45,6 @@ export function authenticateUser(req: Request, res: Response, next: NextFunction
 
         const token = authHeader.split(' ')[1];
 
-        // Add more robust token validation
         if (!token) {
             res.status(401).json({ error: 'Invalid authorization format' });
             return;
@@ -55,7 +53,6 @@ export function authenticateUser(req: Request, res: Response, next: NextFunction
         try {
             const decoded = jwt.verify(token, process.env.JWT_SECRET || 'secretkey') as { userId: string };
 
-            // Add debug logging
             console.log('Decoded token:', decoded);
 
             if (!decoded.userId) {
@@ -70,11 +67,7 @@ export function authenticateUser(req: Request, res: Response, next: NextFunction
                         res.status(404).json({ error: 'User not found' });
                         return;
                     }
-
-                    // Attach user to request
                     req.user = user;
-
-                    // Initialize savedStocks if undefined
                     if (!req.user.savedStocks) {
                         req.user.savedStocks = [];
                     }

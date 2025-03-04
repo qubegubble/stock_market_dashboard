@@ -1,4 +1,3 @@
-// dashboard/src/app/auth.guard.ts
 import { inject } from '@angular/core';
 import {
   CanActivateFn,
@@ -16,12 +15,10 @@ export const authGuard: CanActivateFn = (
   const authService = inject(AuthService);
   const router = inject(Router);
 
-  // Wait for auth to be initialized, then check auth state
   return authService.authInitialized$.pipe(
-    filter(initialized => initialized), // Wait until initialized
+    filter(initialized => initialized),
     take(1),
     map(() => {
-      // Check if authenticated without creating cyclic dependencies
       const isAuth = authService.isAuthenticated();
       if (isAuth) {
         return true;
@@ -38,9 +35,8 @@ export const loginGuard: CanActivateFn = (
   const authService = inject(AuthService);
   const router = inject(Router);
 
-  // Wait for auth to be initialized, then check auth state
   return authService.authInitialized$.pipe(
-    filter(initialized => initialized), // Wait until initialized
+    filter(initialized => initialized),
     take(1),
     map(() => {
       const isAuth = authService.isAuthenticated();

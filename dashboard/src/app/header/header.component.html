@@ -11,14 +11,41 @@
     <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
   </nav>
 
-  <div class="auth-buttons">
-    <ng-container *ngIf="!isLoggedIn; else loggedIn">
+  <!-- Desktop auth buttons -->
+  <div class="auth-buttons desktop-auth">
+    <ng-container *ngIf="!isLoggedIn; else loggedInDesktop">
       <a routerLink="/login" class="login-btn">Login</a>
       <a routerLink="/register" class="register-btn">Register</a>
     </ng-container>
 
-    <ng-template #loggedIn>
+    <ng-template #loggedInDesktop>
       <button (click)="logout()" class="logout-btn">Logout</button>
     </ng-template>
+  </div>
+
+  <!-- Mobile menu button -->
+  <button class="hamburger-btn" (click)="toggleMobileMenu()">
+    <span class="hamburger-icon">☰</span>
+  </button>
+
+  <!-- Mobile menu overlay -->
+  <div class="mobile-menu-overlay" [class.active]="mobileMenuOpen" (click)="closeMobileMenu()"></div>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" [class.active]="mobileMenuOpen">
+    <div class="mobile-menu-header">
+      <button class="close-menu-btn" (click)="closeMobileMenu()">✕</button>
+    </div>
+
+    <div class="mobile-auth">
+      <ng-container *ngIf="!isLoggedIn; else loggedInMobile">
+        <a routerLink="/login" class="login-btn" (click)="closeMobileMenu()">Login</a>
+        <a routerLink="/register" class="register-btn" (click)="closeMobileMenu()">Register</a>
+      </ng-container>
+
+      <ng-template #loggedInMobile>
+        <button (click)="logoutMobile()" class="logout-btn">Logout</button>
+      </ng-template>
+    </div>
   </div>
 </div>

@@ -19,12 +19,21 @@
   <div class="stock-ticker">
     <div class="ticker-wrap">
       <div class="ticker">
+
         <div *ngFor="let stock of stockData" class="ticker-item">
           <span class="ticker-symbol">{{stock.symbol}}</span>
           <span class="ticker-price">${{stock.price}}</span>
           <span class="ticker-change" [ngClass]="{'positive': stock.change > 0, 'negative': stock.change < 0}">
-            {{stock.change > 0 ? '+' : ''}}{{stock.change}}
-          </span>
+          {{stock.change > 0 ? '+' : ''}}{{stock.change}}
+        </span>
+        </div>
+
+        <div *ngFor="let stock of stockData" class="ticker-item">
+          <span class="ticker-symbol">{{stock.symbol}}</span>
+          <span class="ticker-price">${{stock.price}}</span>
+          <span class="ticker-change" [ngClass]="{'positive': stock.change > 0, 'negative': stock.change < 0}">
+          {{stock.change > 0 ? '+' : ''}}{{stock.change}}
+        </span>
         </div>
       </div>
     </div>
@@ -81,9 +90,6 @@
         <h4>Quick Links</h4>
         <ul>
           <li><a routerLink="/dashboard">Dashboard</a></li>
-          <li><a routerLink="/about">About Us</a></li>
-          <li><a routerLink="/features">Features</a></li>
-          <li><a routerLink="/pricing">Pricing</a></li>
         </ul>
       </div>
       <div class="footer-section">

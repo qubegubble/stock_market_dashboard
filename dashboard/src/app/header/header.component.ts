@@ -12,6 +12,7 @@ import {AuthService} from '../auth.service';
 })
 export class HeaderComponent {
   isLoggedIn = false;
+  mobileMenuOpen = false;
 
   constructor(
     private authService: AuthService,
@@ -25,5 +26,19 @@ export class HeaderComponent {
   logout(): void {
     this.authService.logout();
     this.router.navigate(['/login']);
+  }
+
+  logoutMobile(): void {
+    this.authService.logout();
+    this.router.navigate(['/login']);
+    this.closeMobileMenu();
+  }
+
+  toggleMobileMenu(): void {
+    this.mobileMenuOpen = !this.mobileMenuOpen;
+  }
+
+  closeMobileMenu(): void {
+    this.mobileMenuOpen = false;
   }
 }

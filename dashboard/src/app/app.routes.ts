@@ -9,13 +9,10 @@ import { FormsModule } from '@angular/forms';
 import { authGuard, loginGuard } from './auth.guard';
 
 export const routes: Routes = [
-  // Changed default route to point to home
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  // Added home route with lazy loading
   {
     path: 'home',
     loadComponent: () => import('./home/home.component').then(m => m.HomeComponent)
-    // No guard here so it's publicly accessible
   },
   {
     path: 'login',
@@ -32,7 +29,6 @@ export const routes: Routes = [
     loadComponent: () => import('./dashboard/dashboard.component').then(m => m.DashboardComponent),
     canActivate: [authGuard]
   },
-  // Other routes...
 ];
 
 @NgModule({

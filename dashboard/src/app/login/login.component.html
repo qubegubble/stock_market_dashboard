@@ -30,7 +30,6 @@
       </div>
     </div>
 
-    <!-- Show general error message for non-credential errors -->
     <div *ngIf="errorMessage && !showPopup" class="error-message">
       {{ errorMessage }}
     </div>
@@ -43,7 +42,6 @@
   <p>Don't have an account? <a routerLink="/register">Register</a></p>
 </div>
 
-<!-- Keep the existing popup for authentication errors -->
 <div class="error-popup-overlay" *ngIf="showPopup" (click)="dismissError()">
   <div class="error-popup" (click)="$event.stopPropagation()">
     <div class="error-header">
