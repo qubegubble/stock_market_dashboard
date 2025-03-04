@@ -36,4 +36,6 @@ Eine sehr frustrierende Arbeit war das deployen der Dokumentation auf Github Pag
 
 04.03.25 - ~12h Finishing touches + Alles getestet + Dokumentaion fertig geschrieben.
 
+Total: 64h
+
 
