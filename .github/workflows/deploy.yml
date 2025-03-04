@@ -23,23 +23,25 @@ jobs:
           echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin
           docker tag stock-backend:latest qubegubble/stock-backend:latest
           docker push qubegubble/stock-backend:latest
-  # TODO : Deploy Backend to Server
 
-  # Step 2: Build & Deploy Documentation to GitHub Pages
-  deploy-docs:
+
+  build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v4.2.2
 
-      - name: Setup Asciidoctor
-        run: sudo apt-get install asciidoctor
+      - name: Set GitHub Token
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          echo "GH_TOKEN=${{ github.token }}" >> $GITHUB_ENV
 
-      - name: Build Documentation
-        run: asciidoctor -D doc/output doc/asciidoc/src/index.adoc
 
-      - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
+      - name: asciidoctor-ghpages
+        uses: manoelcampos/asciidoctor-ghpages-action@v2.3.0
         with:
-          branch: gh-pages
-          folder: doc/output
+          pdf_build: true
+          source_dir: doc/asciidoc/output
