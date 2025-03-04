@@ -1,4 +1,5 @@
-## Dokumentation
+# Dokumentation
+## HINWEIS: Dokumentation ist als .html zu finden unter doc/output/index.html. Ansonsten ist diese auch als asciidoc unter doc/asciidoc/ zu finden.
 
 
 ### Fazit & Reflexion
