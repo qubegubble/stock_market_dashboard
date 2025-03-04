@@ -25,26 +25,21 @@ jobs:
           docker push qubegubble/stock-backend:latest
   # TODO : Deploy Backend to Server
 
-  # Step 2: Build & Push Docker Image for Frontend
-  deploy-frontend:
+  # Step 2: Build & Deploy Documentation to GitHub Pages
+  deploy-docs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
+      - name: Setup Asciidoctor
+        run: sudo apt-get install asciidoctor
 
-      - name: Install Dependencies
-        run: cd dashboard && npm install
+      - name: Build Documentation
+        run: asciidoctor -D doc/output doc/index.adoc
 
-      - name: Build Dashboard
-        run: cd dashboard && npm run build -- --configuration=production --base-href /stock_market_dashboard/dashboard/
-
-      - name: Deploy to Github Pages
+      - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: dashboard/dist/dashboard
+          folder: doc/output
