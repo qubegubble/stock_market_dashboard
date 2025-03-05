@@ -3,17 +3,17 @@
 
 
 ### Fazit & Reflexion
-Grundsätzlich bin ich zufrieden mit dem Resultat. Ich konnte so ziemlich alle Anforderungen teilweise bis ganz Umsetzen. Vor allem bin ich stolz auf das Dashboard welches modifziert werden kann, User-Konfiguration speichert und live updates liefert.
+Grundsätzlich bin ich zufrieden mit dem Resultat. Ich konnte so ziemlich alle Anforderungen teilweise bis ganz umsetzen. Besonders stolz bin ich auf das Dashboard, welches modifiziert werden kann, die Benutzerkonfiguration speichert und Live-Updates liefert.
 
-Daher ich anfangs sehr wenig Erfahrung hatte mit Java-/Typescript generell brauchte ich eine Weile bis ich mich daran gewöhnt habe. Angular war mich auch neu mit dem Umgang von Komponenten jedoch konnte ich diesen sehr schnell verstehen und auch umsetzen. Ebenso habe ich gefallen an Angulars Komponenten Aufbau gefunden wie sie diese voneinander trennen und unabhängig machen.
+Da ich anfangs sehr wenig Erfahrung mit Java-/TypeScript hatte, brauchte ich eine Weile, um mich daran zu gewöhnen. Auch Angular war für mich neu, insbesondere der Umgang mit Komponenten. Dennoch konnte ich das Konzept schnell verstehen und umsetzen. Zudem habe ich Gefallen an Angulars Komponentenaufbau gefunden, insbesondere daran, wie sie voneinander getrennt und unabhängig gehalten werden.
 
-Sehr Mühe hatte ich jedoch mit dem holen von Aktien Daten. Es gibt nur sehr wenige API's die dies anbieten und welche die es tuen haben hohe rate Limits auf den Free tiers. Aus diesem Grund habe ich mich dort dazu entschieden die Daten zu simulieren statt echte Daten zu fetchen.
+Sehr grosse Mühe hatte ich jedoch mit dem Abrufen von Aktienkursdaten. Es gibt nur sehr wenige APIs, die solche Daten anbieten, und diejenigen, die es tun, haben hohe Ratenlimits in den kostenlosen Tarifen. Aus diesem Grund habe ich mich dazu entschieden, die Daten zu simulieren, anstatt echte Daten zu beziehen.
 
-Ebenfalls musste ich den Umgang mit D3js lernen und WebSockets. Durch hilfe von Online Dokumentation und AI Tools wie Github Copilot konnte ich jedoch diese schnell begreifen und umsetzen. Jedoch musste ich dann oft wieder kleine Anpassungen tätigen daher es meist nicht ganz meinen Erwartungen entsprechen konnte.
+Ebenfalls musste ich den Umgang mit D3.js und WebSockets erlernen. Dank Online-Dokumentationen und AI-Tools wie GitHub Copilot konnte ich diese jedoch schnell begreifen und umsetzen. Dennoch musste ich oft kleinere Anpassungen vornehmen, da die generierten Lösungen nicht immer ganz meinen Erwartungen entsprachen.
 
-Der Umgang mit JWT Token war mir ebenso (fast) neu. Ich wollte diese auch mal in einem anderen Modul implementieren bin jedoch nie dazu gekommen. Der Umgang mit JWT Token war jedoch erstaunlich einfach, die ausführliche Dokumentation und Copilot haben da natürlich stark geholfen.
+Der Umgang mit JWT-Tokens war mir ebenfalls (fast) neu. Ich hatte ursprünglich geplant, sie in einem anderen Modul zu implementieren, bin aber nie dazu gekommen. Trotzdem erwies sich die Arbeit mit JWT-Tokens als erstaunlich einfach – insbesondere dank der ausführlichen Dokumentation und der Unterstützung durch Copilot.
 
-Eine sehr frustrierende Arbeit war das deployen der Dokumentation auf Github Pages. Dies geling mir leider nicht. Die Dokumentation ist jedoch im Projekt aufzufinden.
+Eine sehr frustrierende Aufgabe war das Deployen der Dokumentation auf GitHub Pages. Leider ist mir das nicht gelungen. Die Dokumentation ist jedoch im Projekt zu finden.
 
 ### Arbeitsjournal
 
